@@ -1,10 +1,23 @@
 package com.example.proglam;
 
+import android.graphics.Color;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.location.LocationManager;
 import android.location.LocationListener;
+import android.location.Location;
 import com.google.android.gms.maps.GoogleMap;
+import android.content.Context;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import android.Manifest;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import android.content.pm.PackageManager;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.PolygonOptions;
+
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
  private GoogleMap mMap;
@@ -21,15 +34,14 @@ super.onCreate(savedInstanceState);
  // Inizializza il LocationManager e il LocationListener
 locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
  locationListener = new LocationListener() {
+         @Override
+         public void onLocationChanged(Location location) {
+             // Aggiorna la mappa in base alla posizione del dispositivo
+             LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+         }
+     };
 
-@Override
-
-public void onLocationChanged(Location location) {
- // Aggiorna la mappa in base alla posizione del dispositivo
- LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-}
-};
 
 // Richiede l'accesso alla posizione del dispositivo
 if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
