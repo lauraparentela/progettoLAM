@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "664595453167",
+    "project_id": "proglam-7c7e3",
+    "storage_bucket": "proglam-7c7e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664595453167:android:7817ed6f1c4c656148b71a",
+        "android_client_info": {
+          "package_name": "com.example.proglam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664595453167-aigomp7hf6bo7r2khffe3gsqkl5qma9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2YOHg4jSbWhFd3a-_jCFzikgnW4YwJvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664595453167-aigomp7hf6bo7r2khffe3gsqkl5qma9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
